@@ -22,10 +22,13 @@ while True:
                 ClientSocket.send(str.encode(player))
                 num = ClientSocket.recv(1024)
                 print(num.decode('utf-8'))
-                choose=input('\n[1 for Rock] [ 2 for Paper] [3 for Scissors]: ')
-                ClientSocket.send(str.encode(choose))
-                result = ClientSocket.recv(1024)
-                print(result.decode('utf-8'))
+                while True:
+                    choose=input('\n[1 for Rock] [ 2 for Paper] [3 for Scissors] [0 to cancel]: ')
+                    ClientSocket.send(str.encode(choose))
+                    result = ClientSocket.recv(1024)
+                    print(result.decode('utf-8'))
+                    total = ClientSocket.recv(1024)
+                    print(total.decode('utf-8'))
         elif Input =='0':
                 close = ClientSocket.recv(1024)
                 print(close.decode('utf-8'))
@@ -36,4 +39,3 @@ while True:
 
 
 ClientSocket.close()
-
