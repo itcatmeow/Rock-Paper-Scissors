@@ -42,6 +42,8 @@ def listen_and_reply(s_sock,s_addr):
         listen_list.append(message)
         player_list.append(s_addr)
         send_list.append(s_sock)
+        if len(player_list) < 2:
+             toall("Wait for opponent...")
         if len(listen_list) == 2:
             playerA =listen_list[0]
             playerB =listen_list[1]
