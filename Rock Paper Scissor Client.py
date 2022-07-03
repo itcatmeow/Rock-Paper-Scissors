@@ -9,6 +9,7 @@ def send_recv():
             quit()
         elif Input:
             ClientSocket.send(Input.encode())
+            print("\n Wait for opponent...")
             message = ClientSocket.recv(1024).decode()
             print(message+'\n')
 
