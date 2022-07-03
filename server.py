@@ -79,17 +79,17 @@ def process_start(s_sock):
        elif choose == '1' and com =='Scissors':
             s_sock.sendall(str.encode(result3))
        elif choose == '2' and com =='Rock':
-            s_sock.sendall(str.encode(result4))
+            s_sock.sendall(str.encode(result3))
        elif choose == '2' and com =='Paper':
-            s_sock.sendall(str.encode(result5))
+            s_sock.sendall(str.encode(result1))
        elif choose == '2' and com =='Scissors':
-            s_sock.sendall(str.encode(result6))
+            s_sock.sendall(str.encode(result2))
        elif choose == '3' and com =='Rock':
-            s_sock.sendall(str.encode(result7))
+            s_sock.sendall(str.encode(result2))
        elif choose == '3' and com =='Paper':
-            s_sock.sendall(str.encode(result8))
+            s_sock.sendall(str.encode(result3))
        elif choose == '3' and com =='Scissors':
-            s_sock.sendall(str.encode(result9))
+            s_sock.sendall(str.encode(result1))
 
 def listen_and_reply_single(s_sock):
     while True:
