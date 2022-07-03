@@ -79,7 +79,7 @@ def process_start(s_sock):
             s_sock.sendall(str.encode(result3))
        elif choose == '3' and com =='Scissors':
             s_sock.sendall(str.encode(result1))
-       elif choose == '4' 
+       elif choose == '4' :
             s_sock.sendall(str.encode("Good game, Bye!"))
 
 
