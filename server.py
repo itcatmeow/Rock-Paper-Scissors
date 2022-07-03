@@ -6,17 +6,10 @@ import math
 from multiprocessing import Process
 import random
 import threading
-import random
 
 result1 = 'Draw'
 result2 = 'Lose'
 result3 = 'Win'
-result4 = 'Win'
-result5 = 'Draw'
-result6 = 'Lose'
-result7 = 'Lose'
-result8 = 'Win'
-result9 = 'Draw'
 result=''
 close = 'You Quit'
 startmsg = 'Lets Play'
