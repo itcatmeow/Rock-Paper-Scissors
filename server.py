@@ -84,27 +84,6 @@ def process_start(s_sock):
        elif choose == '3' and com =='Scissors':
             s_sock.sendall(str.encode(result1))
 
-def listen_and_reply_single(s_sock):
-    while True:
-        message = s_sock.recv(1024).decode()
-        if not message:
-            print(f"Player has been disconnected: {s_addr[0]}")
-            return
-        listen_list.append(message)
-        com = random.choice(rps)
-        print("Com : ", com)
-        if len(listen_list) == 2:
-            player =listen_list[0]
-            if (player == '1' and com =='Rock') or (player == '2' and com =='Paper') or (player == '3' and com =='Scissors'):
-                result = 'Draw'
-            elif(player == '1' and com =='Paper') or (player == '2' and com =='Scissors') or (player == '3' and com =='Rock'):
-                result = 'You Lose'
-            elif (player == '1' and com =='Scissors') or (player == '2' and com =='Rock') or (player == '3' and com =='Paper'):
-                result = 'You Win'
-            print(result)
-            toall(result)
-            listen_list.clear()
-
 def toall(message):
     for s_sock in send_list:
         s_sock.send(str.encode(message))
