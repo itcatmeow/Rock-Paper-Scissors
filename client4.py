@@ -17,7 +17,7 @@ print('Waiting for connection')
 try:
         ClientSocket.connect((host,port))
         print (" Welcome to Rock - Paper - Scissor game ")
-        numplayer = input("Choose number of players. Single (1) or Double (2) players. \n En>
+        numplayer = input("Choose number of players. Single (1) or Double (2) players. \n Enter 1 or 2 : ")
         ClientSocket.send(numplayer.encode())
         if numplayer =='1':
                 while True:
@@ -31,3 +31,5 @@ try:
 
 except socket.error as e:
         print(str(e))
+
+
