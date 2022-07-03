@@ -25,7 +25,7 @@ try:
                     ClientSocket.send(str.encode(choose))
                     result = ClientSocket.recv(1024)
                     print(result.decode('utf-8'))
-                    if choose == '4'
+                    if choose == '4' :
                        quit()
                         
         elif numplayer =='2':
