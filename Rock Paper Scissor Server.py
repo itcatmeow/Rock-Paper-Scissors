@@ -35,3 +35,28 @@ def accept():
         else:
            print("Double player mode")
            mula_listen(s_sock,s_addr[0])
+
+def mula_listen(s_sock,s_addr):
+        #thread objects
+        client_thread = threading.Thread( target=listen_and_reply, args=(s_sock,s_addr))
+        #the list of argument for the function
+        client_thread.start()
+
+def listen_and_reply(s_sock,s_addr):
+    while True:
+        message = s_sock.recv(1024).decode()
+        listen_list.append(message)
+        player_list.append(s_addr)
+        send_list.append(s_sock)
+        if len(listen_list) == 2:
+            playerA =listen_list[0]
+            playerB =listen_list[1]
+            if (playerA == '1' and playerB =='1') or (playerA == '2' and playerB =='2') or (playerA == '3' and playerB =='3'):
+                result = 'Draw'
+            elif(playerA == '1' and playerB =='2') or (playerA == '2' and playerB =='3') or (playerA == '3' and playerB =='1'):
+                result = f'{player_list[1]}WIN, {player_list[0]} LOSE'
+            elif (playerA == '1' and playerB =='3') or (playerA == '2' and playerB =='1') or (playerA == '3' and playerB =='2'):
+                result = f'{player_list[0]}WIN, {player_list[1]}B LOSE'
+            print(result)
+            toall(result)
+            listen_list.clear()
