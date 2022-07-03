@@ -4,9 +4,6 @@ from multiprocessing import Process
 import random
 import threading
 
-result1 = 'Draw'
-result2 = 'Lose'
-result3 = 'Win'
 result=''
 rps = ["Rock", "Paper", "Scissors"]
 player_list = []
@@ -90,25 +87,6 @@ def process_start(s_sock):
     while True:
        choose = s_sock.recv(2048).decode()
        com = random.choice(rps)# Random func to decide what computer chooses
-        # to messy :(
-      """ if choose == '1' and com =='Rock':
-            s_sock.sendall(str.encode(result1))
-       elif choose == '1' and com =='Paper':
-            s_sock.sendall(str.encode(result2))
-       elif choose == '1' and com =='Scissors':
-            s_sock.sendall(str.encode(result3))
-       elif choose == '2' and com =='Rock':
-            s_sock.sendall(str.encode(result3))
-       elif choose == '2' and com =='Paper':
-            s_sock.sendall(str.encode(result1))
-       elif choose == '2' and com =='Scissors':
-            s_sock.sendall(str.encode(result2))
-       elif choose == '3' and com =='Rock':
-            s_sock.sendall(str.encode(result2))
-       elif choose == '3' and com =='Paper':
-            s_sock.sendall(str.encode(result3))
-       elif choose == '3' and com =='Scissors':
-            s_sock.sendall(str.encode(result1))"""
        if choose== '1':
              hand = 'Rock'
        elif choose== '2':
