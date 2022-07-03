@@ -48,8 +48,6 @@ def listen_and_reply(s_sock,s_addr):
         player_list.append(s_addr)#list for player name
         send_list.append(s_sock)#list of client to broadcast
         print(player_list)
-        if len(player_list) < 2:
-             toall("Wait for opponent...")
         if len(listen_list) == 2:
            if listen_list[0]:
                 #To assign user input with the correct hand. 1 for rock...
