@@ -21,10 +21,13 @@ try:
         ClientSocket.send(numplayer.encode())
         if numplayer =='1':
                 while True:
-                    choose=input('\n[1 for Rock] [ 2 for Paper] [3 for Scissors]: ')
+                    choose=input('\n[1 for Rock] [ 2 for Paper] [3 for Scissors] [4 for Quit game]: ')
                     ClientSocket.send(str.encode(choose))
                     result = ClientSocket.recv(1024)
                     print(result.decode('utf-8'))
+                    if choose == '4'
+                       quit()
+                        
         elif numplayer =='2':
                 thread_send_recv = threading.Thread(target=send_recv)
                 thread_send_recv.start()
