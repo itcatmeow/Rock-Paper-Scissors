@@ -54,7 +54,7 @@ def listen_and_reply(s_sock,s_addr):
                     playerA = 'Paper'
                 elif listen_list[0] == '3':
                     playerA = 'Scissors'
-            if listen_list[1]:
+           if listen_list[1]:
                 if listen_list[1] == '1':
                     playerB = 'Rock'
                 elif listen_list[1] == '2':
