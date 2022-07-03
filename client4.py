@@ -31,5 +31,3 @@ try:
 
 except socket.error as e:
         print(str(e))
-
-
